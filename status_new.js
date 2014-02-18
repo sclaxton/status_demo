@@ -50,6 +50,7 @@ function PieCharts(){
         var textOffset = this.textOffset;
         var a;
         var oldPieData = this.oldPieData;
+        console.log(oldPieData);
         if(oldPieData[i]){
             a = (oldPieData[i].startAngle + oldPieData[i].endAngle -
                  Math.PI)/2;
@@ -180,9 +181,10 @@ function PieCharts(){
         var empty_slice = Number(max_val) - Number(value);
         var values = [ Number(value), empty_slice ];
         var pie_func = d3.layout.pie().sort(null);
-        this.oldPieData = this.pieData;
-        var pieData = shuffle_array(pie_func(values));
-        this.pieData = pieData;
+        var oldPieData = this.oldPieData;
+        var pieData = this.pieData;
+        oldPieData = pieData;
+        pieData = shuffle_array(pie_func(values));
         var totalOctets = Number(max_val);
         if ( pieData.length > 0 ) {
             this.arc.selectAll("circle").remove();
