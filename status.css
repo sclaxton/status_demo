@@ -161,11 +161,25 @@ path.non-empty {
 
 .cloud {
     padding-left: 1em;
+    padding-right: 1em;
 }
 
 .cloud button {
     margin-top: 1em;
     margin-bottom: 1em;
+}
+
+.time:before {
+    content: "Updated: ";
+}
+
+.time {
+    font-size: 10px;
+    float: right;
+    clear: both;
+
+    /*default font size*/
+    margin-top: 16px;
 }
 
 .content {

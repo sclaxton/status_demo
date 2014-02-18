@@ -249,6 +249,11 @@ function initCloud(data){
     titleNode.classList.add("open");
     cloudRootNode.appendChild(titleNode);
 
+    var timeNode = document.createElement("span");
+    cloudRootNode.appendChild(timeNode);
+    timeNode.className = "time";
+    timeNode.innerHTML = data.time;
+
     var contentNode = document.createElement("div");
     contentNode.className = "content";
     contentNode.classList.add("hide");
